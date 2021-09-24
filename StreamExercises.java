@@ -14,7 +14,7 @@ public class StreamExercises {
 
 		myList.stream().filter(x -> !x.equals("James")).forEach(x -> System.out.println("Hello " + x));
 
-		// Alternative solution if you want to print out James too
+		// Alternative solutions if you want to print out James too
 		List<String> myNewList = myList.stream().filter(x -> !x.equals("James")).map(x -> "Hello " + x)
 				.collect(Collectors.toList());
 		
