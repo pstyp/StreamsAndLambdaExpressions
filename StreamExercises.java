@@ -17,10 +17,13 @@ public class StreamExercises {
 		// Alternative solution if you want to print out James too
 		List<String> myNewList = myList.stream().filter(x -> !x.equals("James")).map(x -> "Hello " + x)
 				.collect(Collectors.toList());
+		
 
 		myNewList.add("James");
 		
 		myNewList.forEach(x -> System.out.println(x));
+		
+		myList.stream().forEach(y -> {if(y != "James") System.out.println("Hello " + y); else System.out.println(y);});
 		
 		// Given the following List of Integers, using a stream, have it reduce and
 		// print the product (all numbers multiplied together).
@@ -53,7 +56,7 @@ public class StreamExercises {
 
 //  Square every number in the list then remove the even numbers and then find the min value.	
 
-		System.out.println(myList3.stream().map(x -> x * x).filter(x -> x % 2 != 0).min(Integer::compare));
+		System.out.println(myList3.stream().map(x -> x * x).filter(x -> x % 2 != 0).min((a, b) -> Integer.compare(a, b)));
 	}
 
 }
